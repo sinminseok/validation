@@ -1,0 +1,15 @@
+FieldError는 두가지 생성사 제공
+
+파라미터 목록
+objectName:오류가 발생한 객체 이름
+field:오류 필드
+rejectedValue:사용자가 입력한 값
+bindingFailure:타입 오류같은 바인딩 실패인지,검증 실패인지 구분값,
+codes:메시지 코드
+arguments:메시지에서 사용하는인자
+defaultMEssage: 기본 오류 메시지
+
+컨트롤러에서 검증 로직이 차지하는 부분은 매우 크다 이런경우 별도의 클래스로 역할읋 분리하는것이 좋다
+그리고 이렇게 분리한 검증 로직을 재사용할 수 도있다.
+
+@Validated는 스프링 전용 검증 애놑이션이고 @Valid는 자바 표준 검증 애노테이션이다 아무거나 사용 ㅇㅇ @Validated는 내부에 groups라는 기능 포함
