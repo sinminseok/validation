@@ -13,3 +13,12 @@ defaultMEssage: 기본 오류 메시지
 그리고 이렇게 분리한 검증 로직을 재사용할 수 도있다.
 
 @Validated는 스프링 전용 검증 애놑이션이고 @Valid는 자바 표준 검증 애노테이션이다 아무거나 사용 ㅇㅇ @Validated는 내부에 groups라는 기능 포함
+
+
+@ModelAttribute vs @RequestBody
+
+Http 요청 파라미터를 처리하는 @ModelAttribute는 각각의 필드 단위로 세밀하게 적용된다
+그래서 특정 필드에 타입이 맞지 않는 오류가 발생해도 나머지 필드는 정상 처리할 수 있다.
+HttpMessageConvert는 @ModelAttribute와 다르게 각각의 필드 단위로 적용되는게 아니라 전체
+객체 단위로 적용된다.
+따라서 메시지 컨버터의 작동이 성공해서 ItemSaveForm 객체를 만들어야 인증이 적용된다.
